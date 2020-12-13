@@ -10,9 +10,10 @@ RUN mkdir /python /xonsh
 # BUILD PYTHON
 #
 WORKDIR /python
-RUN git clone --depth 1 git://github.com/python-cmake-buildsystem/python-cmake-buildsystem
 RUN mkdir -p python-build && mkdir -p python-install
-WORKDIR python-build
+RUN git clone --depth 1 git://github.com/python-cmake-buildsystem/python-cmake-buildsystem
+RUN cd python-cmake-buildsystem && git checkout d7e201c
+WORKDIR /python/python-build
 # TODO: Switch OFF all not used extensions
 RUN cmake -DBUILD_EXTENSIONS_AS_BUILTIN=ON -DBUILTIN_OSSAUDIODEV=OFF -DENABLE_OSSAUDIODEV=OFF -DENABLE_LINUXAUDIODEV=OFF -DBUILTIN_LINUXAUDIODEV=OFF -DENABLE_AUDIOOP=OFF -DBUILTIN_AUDIOOP=OFF -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/scratch/python-install ../python-cmake-buildsystem
 RUN make -j10
