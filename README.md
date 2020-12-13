@@ -1,4 +1,12 @@
-This is the proof of concept of building portable [xonsh](https://github.com/xonsh/xonsh) binary file. 
+<p align="center">
+This is the proof of concept of building portable [xonsh](https://github.com/xonsh/xonsh) binary file.
+</p>
+
+<p align="center">  
+If you like the idea click ⭐ on the repo and stay tuned.
+</p>
+
+## Building
 
 Run building process in docker:
 ```bash
@@ -6,6 +14,8 @@ Run building process in docker:
 ```
 
 As result you will get `./result/xonsh` file - the one binary file that statically linked and linux-portable.
+
+## Testing
 
 Test xonsh binary in clean environment:
 ```bash
