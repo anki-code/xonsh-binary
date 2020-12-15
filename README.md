@@ -28,5 +28,8 @@ docker run --rm -it -v $PWD/result:/result ubuntu
 /result/xonsh
 ```
 
+## Drafts
+
+In the `./drafts` directory you can find drafts of Dockerfiles that is not completed.
 
 
