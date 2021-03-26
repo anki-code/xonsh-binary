@@ -10,7 +10,7 @@ If you like the idea click ⭐ on the repo and stay tuned.
 
 Run building process in docker:
 ```bash
-./build-xxh-portable-musl-alpine.sh
+xonsh ./build-xxh-portable-musl-alpine.xsh
 ```
 
 As result you will get `./result/xonsh` file - the one binary file that statically linked and linux-portable.
