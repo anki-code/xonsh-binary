@@ -1,0 +1,29 @@
+name: Release
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build-appimage:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Install xonsh shell
+      run: pip install xonsh
+    - name: Build build-xonsh-portable-musl-alpine
+      run: xonsh build-xonsh-portable-musl-alpine.xsh
+    - name: Test
+      run: ls -lah result/xonsh
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: |
+          result/xonsh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
