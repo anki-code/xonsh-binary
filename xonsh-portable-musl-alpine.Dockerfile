@@ -23,7 +23,7 @@ RUN cp lib/libpython3.6m.a /usr/lib && cp lib/libpython3.6m.a /usr/lib/libpython
 # BUILD XONSH
 #
 WORKDIR /xonsh
-RUN git clone --depth 1 -b nuitka_fix https://github.com/anki-code/xonsh
+RUN git clone -n https://github.com/xonsh/xonsh && cd xonsh && git checkout 7168b26
 
 #
 # Switching off ctypes library to reduce compilation errors.
