@@ -16,7 +16,7 @@ Build specification:
 Try in Alpine:
 ```bash
 docker run --rm -it alpine
-wget https://github.com/anki-code/xonsh-portable-binary/releases/download/0.9.24-build2/xonsh
+wget https://github.com/anki-code/xonsh-portable-binary/releases/download/0.9.27-7168b26/xonsh
 chmod +x xonsh
 ./xonsh
 ```
@@ -25,7 +25,7 @@ Try in Ubuntu:
 ```bash
 docker run --rm -it ubuntu
 apt update && apt install -y wget
-wget https://github.com/anki-code/xonsh-portable-binary/releases/download/0.9.24-build2/xonsh
+wget https://github.com/anki-code/xonsh-portable-binary/releases/download/0.9.27-7168b26/xonsh
 chmod +x xonsh
 ./xonsh
 ```
