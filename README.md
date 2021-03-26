@@ -13,6 +13,8 @@ Build specification:
 
 ## Try
 
+Download xonsh binary from [the latest release assets](https://github.com/anki-code/xonsh-portable-binary/releases).
+
 Try in Alpine:
 ```bash
 docker run --rm -it alpine
