@@ -8,3 +8,6 @@ The work on this draft was stopped on the step of resolving static compilation e
 ./build-xonsh-portable-glibc-manylinux.sh
 ```
 
+## xonsh-portable-musl-alpine-3.8.Dockerfile
+
+Using [python-cmake-buildsystem Python 3.8 pull request](https://github.com/python-cmake-buildsystem/python-cmake-buildsystem/pull/267).
