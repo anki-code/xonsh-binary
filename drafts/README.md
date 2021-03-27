@@ -1,12 +1,8 @@
 Here you can find drafts of Dockerfiles that is not completed.
 
-## [Manylinux 2014](https://github.com/pypa/manylinux) GLIBC
+## xonsh-portable-glibc-manylinux.Dockerfile 
 
-The work on this draft was stopped on the step of resolving static compilation errors during Nuitka compilation.
-
-```bash
-./build-xonsh-portable-glibc-manylinux.sh
-```
+Building on [Manylinux 2014](https://github.com/pypa/manylinux) with GLIBC.
 
 ## xonsh-portable-musl-alpine-Python-3.8-cmake.Dockerfile
 
