@@ -10,7 +10,7 @@ The work on this draft was stopped on the step of resolving static compilation e
 
 ## xonsh-portable-musl-alpine-Python-3.8-cmake.Dockerfile
 
-[Building Python 3.8 from python-cmake-buildsystem pull request](https://github.com/python-cmake-buildsystem/python-cmake-buildsystem/pull/267).
+Building Python 3.8 from [python-cmake-buildsystem pull request](https://github.com/python-cmake-buildsystem/python-cmake-buildsystem/pull/267).
 
 ## xonsh-portable-musl-alpine-Python-3.8-make.Dockerfile
 
