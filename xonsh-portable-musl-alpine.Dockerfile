@@ -1,10 +1,12 @@
 FROM python:3.6-alpine
 VOLUME /result
 
-RUN apk update && apk add --update musl-dev gcc make cmake python3-dev py3-pip chrpath git vim mc wget openssh-client libuuid
-RUN pip3 install -U pip nuitka==0.6.10 prompt_toolkit pygments setproctitle
+RUN apk update && apk add --update musl-dev gcc make cmake python3-dev py3-pip chrpath git vim mc wget openssh-client libuuid build-base
+RUN pip3 install -U pip nuitka prompt_toolkit pygments setproctitle
 
 RUN mkdir /python /xonsh
+
+RUN cd /lib &&  ln -s libuuid.so.1 libuuid.so  # Fix https://github.com/Nuitka/Nuitka/issues/1046
 
 #
 # BUILD PYTHON
@@ -32,11 +34,6 @@ RUN git clone -n https://github.com/xonsh/xonsh && cd xonsh && git checkout 7168
 RUN find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/import ctypes/#import ctypes/g'
 RUN sed -i 's/def LIBC():/def LIBC():\n    return None/g' ./xonsh/xonsh/platform.py
 
-#
-# Fix Nuitka + Python 3.6 + Alpine issue when libuuid is installed via `apk add libuuid`
-# but `ctypes.util.find_library('uuid')` returns None instead of right path.
-#
-RUN sed -i 's|locateDLL("uuid")|"/lib/libuuid.so.1.3.0"|g' /usr/local/lib/python3.6/site-packages/nuitka/plugins/standard/ImplicitImports.py
 
 #
 # Switching off SQLite. Sad but it raises compilation error. We should found the way to fix it in the future.
