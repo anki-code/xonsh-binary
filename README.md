@@ -7,7 +7,7 @@ If you like the idea click ⭐ on the repo and stay tuned.
 </p>
 
 Build specification:
-* Pinned Python 3.6 becase [python-cmake-buildsystem](github.com/python-cmake-buildsystem/python-cmake-buildsystem) has not updated yet.
+* Pinned Python 3.6 becase [python-cmake-buildsystem](https://github.com/python-cmake-buildsystem/python-cmake-buildsystem) has not updated yet.
 * Pinned Nuitka 0.6.10 because there is some [hotfixes in the Nuitka code for Alpine](https://github.com/anki-code/xonsh-portable-binary/blob/3ec06162ff75bd5d78ff17b1c0da74e0acb7dc73/xonsh-portable-musl-alpine.Dockerfile#L35-L39).
 * Pinned Xonsh to 0.9.27 7168b26 to [increase the version manually](https://github.com/anki-code/xonsh-portable-binary/blob/3ec06162ff75bd5d78ff17b1c0da74e0acb7dc73/xonsh-portable-musl-alpine.Dockerfile#L22-L26).
 
