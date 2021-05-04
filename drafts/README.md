@@ -14,4 +14,4 @@ Building Python 3.8 from sources. Working was stopped on selecting appropriate m
 
 ## xonsh-portable-musl--python-build-standalone.Dockerfile
 
-Building Python 3.8 from [https://github.com/indygreg/python-build-standalone](https://github.com/indygreg/python-build-standalone). Working was stopped on Nuitka error `file format not recognized`.
+Building Python 3.8 from [python-build-standalone](https://github.com/indygreg/python-build-standalone). Working was stopped on Nuitka error `file format not recognized`.
