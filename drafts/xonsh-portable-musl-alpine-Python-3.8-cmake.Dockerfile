@@ -2,7 +2,7 @@ FROM python:3.8-alpine
 VOLUME /result
 
 RUN apk update && apk add --update musl-dev gcc make cmake python3-dev py3-pip chrpath git vim mc wget openssh-client libuuid
-RUN pip3 install -U pip nuitka prompt_toolkit pygments setproctitle
+RUN pip3 install -U pip nuitka prompt_toolkit pygments setproctitle asyncio
 
 RUN mkdir /python /xonsh
 
