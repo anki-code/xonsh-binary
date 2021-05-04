@@ -20,7 +20,10 @@ RUN git clone --depth 1 -b upgrade-py383 https://github.com/dand-oss/python-cmak
 WORKDIR /python/python-build
 # TODO: Switch OFF all not used extensions
 RUN cmake -DBUILD_EXTENSIONS_AS_BUILTIN=ON -DBUILTIN_OSSAUDIODEV=OFF -DENABLE_OSSAUDIODEV=OFF -DENABLE_LINUXAUDIODEV=OFF -DBUILTIN_LINUXAUDIODEV=OFF -DENABLE_AUDIOOP=OFF -DBUILTIN_AUDIOOP=OFF -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/scratch/python-install ../python-cmake-buildsystem
-RUN make -j10
+
+# Ignore "Error 2" because libpython3.8.a already builded at this time
+RUN make -j10 || true  
+
 RUN cp lib/libpython3.8.a /usr/lib
 
 #
