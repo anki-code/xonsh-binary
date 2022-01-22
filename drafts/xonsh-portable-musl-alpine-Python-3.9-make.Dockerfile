@@ -40,9 +40,7 @@ RUN sed -i 's/def LIBC():/def LIBC():\n    return None/g' ./xonsh/xonsh/platform
 #
 #RUN find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/import sqlite/#import sqlite/g'
 
-ENV LDFLAGS "-static -l:libsqlite3.a -l:libpython3.9.a"
-ENV CCFLAGS "-I/usr/include"
-ENV CFFLAGS "-I/usr/include"
+ENV LDFLAGS "-static -l:libpython3.9.a" # -l:libsqlite3.a 
 RUN nuitka3 --python-flag=no_site --python-flag=no_warnings --standalone --follow-imports xonsh/xonsh  # --show-progress
 RUN ls -la xonsh.dist/xonsh
 
