@@ -14,7 +14,7 @@ Building Python 3.8 from sources. Working was stopped on selecting appropriate m
 
 ## xonsh-portable-musl-alpine-Python-3.9-make.Dockerfile
 
-Building Python 3.9 from [python-cmake-buildsystem](https://github.com/python-cmake-buildsystem/python-cmake-buildsystem/). Working was stopped because errors during compilation with Nuitka.
+Building Python 3.9 from [python-cmake-buildsystem](https://github.com/python-cmake-buildsystem/python-cmake-buildsystem/). Working was stopped because [errors during compilation with Nuitka](https://github.com/Nuitka/Nuitka/issues/1392).
 
 ## xonsh-portable-musl--python-build-standalone.Dockerfile
 
