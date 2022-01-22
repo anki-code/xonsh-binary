@@ -12,6 +12,10 @@ Building Python 3.8 from [python-cmake-buildsystem pull request](https://github.
 
 Building Python 3.8 from sources. Working was stopped on selecting appropriate modules for compilation.
 
+## xonsh-portable-musl-alpine-Python-3.9-make.Dockerfile
+
+Building Python 3.9 from [python-cmake-buildsystem](https://github.com/python-cmake-buildsystem/python-cmake-buildsystem/). Working was stopped because errors during compilation with Nuitka.
+
 ## xonsh-portable-musl--python-build-standalone.Dockerfile
 
 Building Python 3.8 from [python-build-standalone](https://github.com/indygreg/python-build-standalone). Working was stopped on Nuitka error `file format not recognized`.
