@@ -19,3 +19,7 @@ Building Python 3.9 from [python-cmake-buildsystem](https://github.com/python-cm
 ## xonsh-portable-musl--python-build-standalone.Dockerfile
 
 Building Python 3.8 from [python-build-standalone](https://github.com/indygreg/python-build-standalone). Working was stopped on Nuitka error `file format not recognized`.
+
+## Building xonsh with nuitka draft.sh
+
+This draft is working but returns the AppImage file to run using FUSE.
