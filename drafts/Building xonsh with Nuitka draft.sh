@@ -1,6 +1,6 @@
 # docker run -it --rm ubuntu:20.04
 
-apt update && apt install --yes --force-yes patchelf python3 python3-pip gcc make zlib1g-dev git
+apt update --yes --force-yes && apt install --yes --force-yes patchelf python3 python3-pip gcc make zlib1g-dev git
 pip3 install nuitka zstandard
 
 mkdir /xonsh
