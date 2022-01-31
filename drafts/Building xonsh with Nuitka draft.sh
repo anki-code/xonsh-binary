@@ -1,4 +1,4 @@
-docker run -it --rm ubuntu:18.04
+# docker run -it --rm ubuntu:20.04
 
 apt update && apt install patchelf python3 python3-pip gcc make zlib1g-dev git
 pip3 install nuitka zstandard
