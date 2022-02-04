@@ -1,5 +1,5 @@
 <p align="center">
-This is the proof of concept of building portable <a href="https://github.com/xonsh/xonsh">xonsh</a> binary file.
+This is the proof of concept of building <a href="https://github.com/xonsh/xonsh">xonsh</a> binary file.
 </p>
 
 <p align="center">  
