@@ -44,4 +44,4 @@ ENV LDFLAGS "-static -l:libpython3.6m.a"
 RUN nuitka3 --python-flag=no_site --python-flag=no_warnings --standalone --follow-imports xonsh/xonsh  # --show-progress
 RUN ls -la xonsh.dist/xonsh
 
-CMD cp xonsh.dist/xonsh /result
+CMD cp xonsh.dist/xonsh /result/xonsh-0.9.27-python3.6-musl-binary
