@@ -7,6 +7,13 @@ WORKDIR /
 RUN git clone -n https://github.com/xonsh/xonsh && cd xonsh && git checkout 0.11.0
 
 WORKDIR /xonsh
+
+#
+# To install addition module use --include-module argument (https://github.com/Nuitka/Nuitka/issues/1401) i.e.
+#   pip3 install tqdm
+#   nuitka3 --static-libpython=yes --standalone --onefile --onefile-tempdir --include-module=tqdm xonsh
+#
 RUN nuitka3 --static-libpython=yes --standalone --onefile --onefile-tempdir xonsh
+
 RUN mv xonsh.bin xonsh-0.11.0-python3.8-glibc-binary
 CMD cp xonsh-0.11.0-python3.8-glibc-binary /result
