@@ -1,7 +1,8 @@
 FROM ubuntu:20.04
 
 RUN apt update && apt install --yes patchelf python3 python3-pip gcc make zlib1g-dev git
-RUN pip3 install nuitka zstandard
+RUN pip3 install nuitka zstandard 
+RUN pip3 install 'xonsh[full]' && pip3 uninstall xonsh  # To install full xonsh dependencies
 
 WORKDIR /
 RUN git clone -n https://github.com/xonsh/xonsh && cd xonsh && git checkout 0.11.0
