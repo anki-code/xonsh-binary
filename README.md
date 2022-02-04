@@ -1,5 +1,5 @@
 <p align="center">
-This is the proof of concept of building <a href="https://github.com/xonsh/xonsh">xonsh</a> binary file.
+This is the proof of concept of building <a href="https://github.com/xonsh/xonsh">xonsh</a> binary file. This allows you to run xonsh interactive or run xonsh scripts without Python installation. Also you can <a href="https://github.com/anki-code/xonsh-binary/blob/516ec6ddeef414bcf2f15d61320f6df853b888e6/xonsh-0.11.0-python3.8-glibc-binary.Dockerfile#L12-L17">include any module into the binary file</a> and import it in xonsh.
 </p>
 
 <p align="center">  
