@@ -23,7 +23,3 @@ Building Python 3.8 from [python-build-standalone](https://github.com/indygreg/p
 ## Building xonsh with Nuitka AppImage draft.sh
 
 This draft is working but returns the AppImage file to run using FUSE.
-
-## Building xonsh with Nuitka draft.sh 
-
-This draft should be added to the main docker file.
