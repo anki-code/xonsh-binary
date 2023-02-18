@@ -14,7 +14,7 @@ WORKDIR /xonsh
 #   pip3 install tqdm
 #   nuitka3 --static-libpython=yes --standalone --onefile --onefile-tempdir --include-module=tqdm xonsh
 #
-RUN nuitka3 --static-libpython=yes --standalone --onefile --onefile-tempdir xonsh
+RUN nuitka3 --static-libpython=yes --standalone --onefile --onefile-tempdir-spec='%TEMP%/onefile_%PID%_%TIME%' xonsh
 
 RUN mv xonsh.bin xonsh-0.11.0-python3.8-glibc-binary
 CMD cp xonsh-0.11.0-python3.8-glibc-binary /result
