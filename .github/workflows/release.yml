@@ -18,13 +18,13 @@ jobs:
     - name: Build xonsh-python-glibc-binary
       run: xonsh xonsh-python-glibc-binary.xsh
     - name: Test
-      run: ls -lah result/xonsh-python-glibc-binary
+      run: ls -lah result/xonsh-binary
     - name: Release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
-          result/xonsh-python-glibc-binary
+          result/xonsh-binary
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
