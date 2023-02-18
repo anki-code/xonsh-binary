@@ -5,7 +5,7 @@ RUN pip3 install nuitka zstandard
 RUN pip3 install 'xonsh[full]' && pip3 uninstall -y xonsh  # To install full xonsh dependencies
 
 WORKDIR /
-RUN git clone -n https://github.com/xonsh/xonsh && cd xonsh && git checkout 0.11.0
+RUN git clone -n https://github.com/xonsh/xonsh && cd xonsh && git checkout 0.13.4
 
 WORKDIR /xonsh
 
