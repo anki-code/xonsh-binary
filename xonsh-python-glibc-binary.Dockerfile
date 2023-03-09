@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:22.04  # set `debian:sid` here to get more fresh python (see also https://hub.docker.com/_/debian)
 
 RUN apt update && apt install --yes patchelf python3 python3-pip gcc make zlib1g-dev git
 RUN pip3 install nuitka zstandard 
