@@ -12,19 +12,19 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.8'
+        python-version: '3.11'
     - name: Install xonsh shell
       run: pip install xonsh
-    - name: Build xonsh-python-glibc-binary
-      run: xonsh xonsh-python-glibc-binary.xsh
+    - name: Build xonsh-glibc-binary
+      run: xonsh xonsh-glibc-binary.xsh
     - name: Test
-      run: ls -lah result/xonsh-binary
+      run: ls -lah result/xonsh-glibc-binary
     - name: Release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
-          result/xonsh-binary
+          result/xonsh-glibc-binary
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
@@ -35,18 +35,18 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.8'
+        python-version: '3.11'
     - name: Install xonsh shell
       run: pip install xonsh
-    - name: Build build-xonsh-portable-musl-alpine
-      run: xonsh xonsh-0.9.27-python3.6-musl-binary-build.xsh
+    - name: Build xonsh-musl-binary
+      run: xonsh xonsh-musl-binary.xsh
     - name: Test
-      run: ls -lah result/xonsh-0.9.27-python3.6-musl-binary
+      run: ls -lah result/xonsh-musl-binary
     - name: Release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
-          result/xonsh-0.9.27-python3.6-musl-binary
+          result/xonsh-musl-binary
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
