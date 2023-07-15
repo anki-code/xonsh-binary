@@ -42,6 +42,6 @@ RUN find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/import sqlite
 
 ENV LDFLAGS "-static -l:libpython3.9.a"
 RUN nuitka3 --python-flag=no_site --python-flag=no_warnings --standalone --follow-imports xonsh/xonsh  # --show-progress
-RUN ls -la xonsh.dist/xonsh
+RUN ls -la xonsh.dist/xonsh.bin
 
 CMD cp xonsh.dist/xonsh.bin /result/xonsh-musl-binary
