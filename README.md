@@ -10,8 +10,8 @@ If you like the idea click ⭐ on the repo and stay tuned.
 
 Download xonsh binary from [the release assets](https://github.com/anki-code/xonsh-portable-binary/releases):
 
-* Recommended: **xonsh-python-glibc-binary** - glibc-build of xonsh 0.14.0 binary with Python 3.11 based on Nuitka.
-* Just for demo: **xonsh-musl-binary** - musl-build of xonsh 0.14.0 binary with Python 3.9 from [python-cmake-buildsystem](https://github.com/python-cmake-buildsystem/python-cmake-buildsystem). SQLite3 is disabled in this build.
+* Recommended: **xonsh-glibc-binary** - glibc-build of xonsh 0.14.0 binary with Python 3.11 based on Nuitka.
+* Just for demo: **xonsh-musl-binary** - musl-build of xonsh 0.14.0 binary with Python 3.9 from [python-cmake-buildsystem](https://github.com/python-cmake-buildsystem/python-cmake-buildsystem). SQLite3 is disabled in this build (PR is welcome!).
 
 ## Drafts
 
