@@ -13,7 +13,7 @@ RUN cd /lib &&  ln -s libuuid.so.1 libuuid.so  # Fix https://github.com/Nuitka/N
 #
 WORKDIR /python
 RUN mkdir -p python-build && mkdir -p python-install
-RUN git clone -n git://github.com/python-cmake-buildsystem/python-cmake-buildsystem && cd python-cmake-buildsystem && git checkout d7e201c
+RUN git clone -n http://github.com/python-cmake-buildsystem/python-cmake-buildsystem && cd python-cmake-buildsystem && git checkout d7e201c
 
 WORKDIR /python/python-build
 # TODO: Switch OFF all not used extensions
