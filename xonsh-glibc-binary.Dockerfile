@@ -17,5 +17,5 @@ WORKDIR /xonsh
 #
 RUN nuitka3 --static-libpython=yes --standalone --onefile --onefile-tempdir-spec='%TEMP%/onefile_%PID%_%TIME%' xonsh
 
-RUN mv xonsh.bin xonsh-binary
-CMD cp xonsh-binary /result
+RUN mv xonsh.bin xonsh-glibc-binary
+CMD cp xonsh-glibc-binary /result
