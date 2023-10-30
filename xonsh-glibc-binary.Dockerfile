@@ -6,7 +6,7 @@ RUN pip3 install --break-system-packages nuitka zstandard
 RUN pip3 install --break-system-packages 'xonsh[full]' && pip3 uninstall --break-system-packages -y xonsh  # To install full xonsh dependencies
 
 WORKDIR /
-RUN git clone -n https://github.com/xonsh/xonsh && cd xonsh && git checkout 0.14.0
+RUN git clone -n https://github.com/xonsh/xonsh && cd xonsh && git checkout 0.14.1
 
 WORKDIR /xonsh
 
