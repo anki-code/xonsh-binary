@@ -39,7 +39,7 @@ RUN sed -i 's/def LIBC():/def LIBC():\n    return None/g' ./xonsh/xonsh/platform
 # Switching off SQLite. Sad but it raises compilation error. We should found the way to fix it in the future.
 #
 RUN find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/import sqlite/#import sqlite/g'
-RUN find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/\@lazyobject/\#\@lazyobject/g'
+#RUN find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/\@lazyobject/\#\@lazyobject/g'
 
 ENV LDFLAGS "-static -l:libpython3.10.a"
 RUN nuitka3 --python-flag=no_site --python-flag=no_warnings --standalone --follow-imports xonsh/xonsh  # --show-progress
