@@ -13,19 +13,19 @@ RUN cd /lib &&  ln -s libuuid.so.1 libuuid.so  # Fix https://github.com/Nuitka/N
 #
 WORKDIR /python
 RUN mkdir -p python-build && mkdir -p python-install
-RUN git clone -n http://github.com/python-cmake-buildsystem/python-cmake-buildsystem && cd python-cmake-buildsystem && git checkout 312ca57
+RUN git clone -b python3.10 https://github.com/anki-code/python-cmake-buildsystem-py3.10 && mv python-cmake-buildsystem-py3.10 python-cmake-buildsystem
 
 WORKDIR /python/python-build
 # TODO: Switch OFF all not used extensions
-RUN cmake -DBUILD_EXTENSIONS_AS_BUILTIN=ON -DBUILTIN_OSSAUDIODEV=OFF -DENABLE_OSSAUDIODEV=OFF -DENABLE_LINUXAUDIODEV=OFF -DBUILTIN_LINUXAUDIODEV=OFF -DENABLE_AUDIOOP=OFF -DBUILTIN_AUDIOOP=OFF -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/scratch/python-install ../python-cmake-buildsystem
+RUN cmake -DPYTHON_VERSION=3.10 -DBUILD_EXTENSIONS_AS_BUILTIN=ON -DBUILTIN_OSSAUDIODEV=OFF -DENABLE_OSSAUDIODEV=OFF -DENABLE_LINUXAUDIODEV=OFF -DBUILTIN_LINUXAUDIODEV=OFF -DENABLE_AUDIOOP=OFF -DBUILTIN_AUDIOOP=OFF -DCMAKE_INSTALL_PREFIX:PATH=${HOME}/scratch/python-install ../python-cmake-buildsystem
 RUN make -j10
-RUN cp lib/libpython3.9.a /usr/lib
+RUN cp lib/libpython3.10.a /usr/lib
 
 #
 # BUILD XONSH
 #
 WORKDIR /xonsh
-RUN git clone -n https://github.com/xonsh/xonsh && cd xonsh && git checkout 7219663
+RUN git clone -n https://github.com/xonsh/xonsh && cd xonsh && git checkout 9f0bf03  # xonsh 0.17.0
 
 #
 # Switching off ctypes library to reduce compilation errors.
@@ -40,7 +40,7 @@ RUN sed -i 's/def LIBC():/def LIBC():\n    return None/g' ./xonsh/xonsh/platform
 #
 RUN find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/import sqlite/#import sqlite/g'
 
-ENV LDFLAGS "-static -l:libpython3.9.a"
+ENV LDFLAGS "-static -l:libpython3.10.a"
 RUN nuitka3 --python-flag=no_site --python-flag=no_warnings --standalone --follow-imports xonsh/xonsh  # --show-progress
 RUN ls -la xonsh.dist/xonsh.bin
 
