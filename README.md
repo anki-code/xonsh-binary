@@ -12,6 +12,7 @@ Download xonsh binary from [the release assets](https://github.com/anki-code/xon
 
 * Recommended: **xonsh-glibc-binary** - glibc-build of xonsh 0.17.0 binary with Python 3.11 based on [Nuitka](https://nuitka.net/).
 * Just for demo: **xonsh-musl-binary** - musl-build of xonsh 0.17.0 binary with Python 3.10 from [python-cmake-buildsystem](https://github.com/python-cmake-buildsystem/python-cmake-buildsystem). SQLite3 is disabled in this build (PR is welcome!).
+* [Find another path](https://gregoryszorc.com/docs/pyoxidizer/main/pyoxidizer_comparisons.html).
 
 ## Drafts
 
