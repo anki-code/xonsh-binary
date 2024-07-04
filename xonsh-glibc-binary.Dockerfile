@@ -1,7 +1,7 @@
 # set `debian:sid` here to get more fresh python (see also https://hub.docker.com/_/debian)
 FROM ubuntu:23.04
 
-RUN apt update && apt install --yes patchelf python3-full python3-pip gcc make zlib1g-dev git
+RUN apt update && apt install --yes patchelf gcc make zlib1g-dev git python3-full python3-pip
 RUN pip3 install --break-system-packages nuitka zstandard 
 RUN pip3 install --break-system-packages 'xonsh[full]' && pip3 uninstall --break-system-packages -y xonsh  # To install full xonsh dependencies
 
