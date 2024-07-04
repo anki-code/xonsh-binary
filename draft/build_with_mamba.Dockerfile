@@ -143,6 +143,6 @@ RUN echo "print('hello world')" > hello_world.py
 # run nuitka
 RUN conda activate test_env  && python $NUITKA_COMPILATION_CMD
 
-
+### xmamba install -c conda-forge libpython-static==3.11.3 gcc
 
 
