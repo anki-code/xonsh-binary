@@ -143,6 +143,12 @@ RUN echo "print('hello world')" > hello_world.py
 # run nuitka
 RUN conda activate test_env  && python $NUITKA_COMPILATION_CMD
 
-### xmamba install -c conda-forge libpython-static==3.11.3 gcc
 
-
+# apt update && apt install -y curl git
+# "${SHELL}" <(curl -L https://micro.mamba.pm/install.sh)
+# source xmamba
+# xmamba activate base
+# xmamba install -c conda-forge libpython-static==3.11.3 gcc ccache
+# pip install nuitka
+# git clone https://github.com/xonsh/xonsh@executables
+# nuitka3 --static-libpython=yes --standalone --python-flag=nosite,-O,-v --show-progress --show-scons --show-modules --assume-yes-for-downloads --jobs=6  sp.py
