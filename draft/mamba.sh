@@ -8,6 +8,7 @@ pip install nuitka
 git clone -b executables https://github.com/xonsh/xonsh
 cd xonsh
 find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/import ctypes/#import ctypes/g'
+sed -i 's/def LIBC():/def LIBC():\n    return None/g' ./xonsh/platform.py
 cd ..
 
 echo "import subprocess; print(123)" > sp.py
