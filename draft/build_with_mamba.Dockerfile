@@ -144,7 +144,7 @@ RUN echo "print('hello world')" > hello_world.py
 RUN conda activate test_env  && python $NUITKA_COMPILATION_CMD
 
 
-# apt update && apt install -y curl git vim patchelf
+# apt update && apt install -y curl git vim patchelf elfutils
 # "${SHELL}" <(curl -L https://micro.mamba.pm/install.sh)
 # source ~/.bashrc
 # micromamba activate base
