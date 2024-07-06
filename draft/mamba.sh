@@ -14,3 +14,9 @@ cd ..
 echo "import subprocess; print(123)" > sp.py
 nuitka3 --static-libpython=yes --standalone --show-progress --show-scons --show-modules --assume-yes-for-downloads --jobs=6  sp.py
 nuitka3 --static-libpython=yes --standalone --python-flag=nosite,-O,-v --show-progress --show-scons --show-modules --assume-yes-for-downloads --jobs=6  sp.py
+
+
+
+# select default compiler (empty string for gcc) or clang :
+#ARG compiler_option=""
+#ARG compiler_option="--clang"
