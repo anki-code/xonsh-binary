@@ -8,7 +8,7 @@ If you like the idea click ⭐ on the repo and stay tuned.
 
 ## Available builds
 
-⚠️ The build was broken after around 0.15.0 version. New way to build xonsh found but it has issues. See `draft` directory.
+⚠️ The build was broken after around 0.15.0 version. New way to build xonsh found but incomplete. See `draft` directory.
 
 Download xonsh binary from [the release assets](https://github.com/anki-code/xonsh-portable-binary/releases):
 
