@@ -4,7 +4,7 @@ source ~/.bashrc
 micromamba activate base
 micromamba install -c conda-forge libpython-static==3.11.3 gcc ccache
 pip install nuitka xonsh[full]
-pip uninstall xonsh
+pip uninstall -y xonsh
 
 git clone -b executables https://github.com/xonsh/xonsh
 #cd xonsh
