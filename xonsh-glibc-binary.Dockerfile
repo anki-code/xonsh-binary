@@ -12,6 +12,7 @@ RUN /root/.local/bin/micromamba shell init -s bash -p ~/micromamba >> ~/.bashrc
 
 WORKDIR /
 RUN git clone -b $XONSH_VER https://github.com/xonsh/xonsh
+RUN mkdir -p /result
 
 RUN eval "$(/root/.local/bin/micromamba shell hook -s bash)" \
      && micromamba activate base \
