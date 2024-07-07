@@ -12,9 +12,8 @@ git clone -b executables https://github.com/xonsh/xonsh
 #sed -i 's/def LIBC():/def LIBC():\n    return None/g' ./xonsh/platform.py
 #cd ..
 
-echo "import subprocess; print(123)" > sp.py
-nuitka3 --static-libpython=yes --standalone --show-progress --show-scons --show-modules --assume-yes-for-downloads --jobs=6  sp.py
-nuitka3 --static-libpython=yes --standalone --python-flag=nosite,-O,-v --show-progress --show-scons --show-modules --assume-yes-for-downloads --jobs=6  sp.py
+nuitka3 --static-libpython=yes --standalone --show-progress --show-scons --show-modules --assume-yes-for-downloads --jobs=6 xonsh/xonsh
+nuitka3 --static-libpython=yes --standalone --python-flag=nosite,-O,-v --show-progress --show-scons --show-modules --assume-yes-for-downloads --jobs=6  xonsh/xonsh
 
 
 
