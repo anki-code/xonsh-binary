@@ -23,7 +23,7 @@ RUN eval "$(/root/.local/bin/micromamba shell hook -s bash)" \
      && nuitka --standalone --onefile --static-libpython=yes \
         --onefile-tempdir-spec='%TEMP%/onefile_%PID%_%TIME%' \
         --show-progress --show-scons --show-modules \
-        --assume-yes-for-downloads --jobs=6 \
+        --assume-yes-for-downloads --jobs=2 \
         xonsh/xonsh
 
 # --python-flag=nosite,-O,-v
