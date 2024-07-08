@@ -1,9 +1,12 @@
 # set `debian:sid` here to get more fresh python (see also https://hub.docker.com/_/debian)
 FROM ubuntu
 
-ENV PYTHON_VER=3.11.3
-ENV XONSH_VER=0.17.0
-ENV XONSH_BIN=xonsh-$XONSH_VER-py$PYTHON_VER-glibc.bin
+ARG PYTHON_VER=3.11.3
+ARG XONSH_VER=0.17.0
+
+ENV PYTHON_VER=${PYTHON_VER}
+ENV XONSH_VER=${XONSH_VER}
+ENV XONSH_BIN=xonsh-$XONSH_VER-py$PYTHON_VER-glibc-$(uname -m).bin
 
 SHELL ["/bin/bash", "-c"]
 RUN apt update && apt install -y curl git vim patchelf elfutils binutils-common binutils
