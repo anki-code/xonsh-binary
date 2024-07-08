@@ -46,7 +46,7 @@ RUN find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/import sqlite
 #RUN find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/\@lazyobject/\#\@lazyobject/g'
 
 ENV LDFLAGS "-static -l:libpython3.10.a"
-RUN nuitka3 --onefile --standalone --python-flag=no_site --python-flag=no_warnings --follow-imports xonsh/xonsh
+RUN nuitka --onefile --standalone --python-flag=no_site --python-flag=no_warnings --follow-imports xonsh/xonsh
 # --show-progress
 RUN ls -la xonsh.dist/*
 
