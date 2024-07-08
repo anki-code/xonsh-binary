@@ -16,7 +16,7 @@ jobs:
     - name: Install xonsh shell
       run: pip install xonsh
     - name: Build xonsh-glibc-binary
-      run: xonsh xonsh-glibc-binary.xsh --build-arg="PYTHON_VER=3.11"
+      run: xonsh xonsh-glibc-binary.xsh 
     - name: Test
       run: ls -lah result/*.bin
     - name: Release
