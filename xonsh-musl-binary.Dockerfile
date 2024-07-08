@@ -1,6 +1,9 @@
 FROM python:3.10-alpine
 VOLUME /result
 
+ENV XONSH_VER=0.17.0
+ENV XONSH_BIN=xonsh-$XONSH_VER-py3.10-glibc.bin
+
 RUN apk update && apk add --update musl-dev gcc make cmake python3-dev py3-pip chrpath git vim mc wget openssh-client libuuid build-base patchelf
 RUN pip3 install -U pip prompt_toolkit pygments setproctitle
 RUN pip3 install -U git+https://github.com/Nuitka/Nuitka@factory
@@ -26,7 +29,7 @@ RUN cp lib/libpython3.10.a /usr/lib
 # BUILD XONSH
 #
 WORKDIR /xonsh
-RUN git clone -n https://github.com/xonsh/xonsh && cd xonsh && git checkout 9f0bf03  # xonsh 0.17.0
+RUN git clone -b $XONSH_VER https://github.com/xonsh/xonsh
 
 #
 # Switching off ctypes library to reduce compilation errors.
@@ -43,7 +46,8 @@ RUN find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/import sqlite
 #RUN find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/\@lazyobject/\#\@lazyobject/g'
 
 ENV LDFLAGS "-static -l:libpython3.10.a"
-RUN nuitka3 --python-flag=no_site --python-flag=no_warnings --standalone --follow-imports xonsh/xonsh  # --show-progress
-RUN ls -la xonsh.dist/xonsh.bin
+RUN nuitka3 --onefile --standalone --python-flag=no_site --python-flag=no_warnings --follow-imports xonsh/xonsh
+# --show-progress
+RUN ls -la xonsh.dist/*
 
-CMD cp xonsh.dist/xonsh.bin /result/xonsh-musl-binary
+CMD cp xonsh.bin /result/$XONSH_BIN
