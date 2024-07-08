@@ -28,29 +28,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  xonsh-binary-glibc-aarch:
-    runs-on: macOS-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.11'
-    - name: Install xonsh shell
-      run: pip install xonsh
-    - name: Build xonsh-glibc-binary
-      run: xonsh xonsh-glibc-binary.xsh
-    - name: Test
-      run: ls -lah result/*.bin
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        files: |
-          result/*.bin
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
   xonsh-binary-musl:
     runs-on: ubuntu-latest
     steps:
