@@ -46,7 +46,7 @@ RUN find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/import sqlite
 #RUN find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/\@lazyobject/\#\@lazyobject/g'
 
 ENV LDFLAGS "-static -l:libpython3.10.a"
-RUN nuitka --standalone --onefile --static-libpython=yes \
+RUN nuitka --standalone --onefile \
         --onefile-tempdir-spec='%TEMP%/onefile_%PID%_%TIME%' \
         --show-progress --show-scons --show-modules \
         --assume-yes-for-downloads --jobs=2 \
