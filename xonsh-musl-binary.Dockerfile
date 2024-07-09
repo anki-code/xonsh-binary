@@ -35,8 +35,8 @@ RUN git clone -b $XONSH_VER https://github.com/xonsh/xonsh
 # Switching off ctypes library to reduce compilation errors.
 # This library mostly used to Windows use cases and not needed in Linux.
 #
-RUN find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/import ctypes/#import ctypes/g'
-RUN sed -i 's/def LIBC():/def LIBC():\n    return None/g' ./xonsh/xonsh/platform.py
+#RUN find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/import ctypes/#import ctypes/g'
+#RUN sed -i 's/def LIBC():/def LIBC():\n    return None/g' ./xonsh/xonsh/platform.py
 
 
 #
