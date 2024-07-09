@@ -8,8 +8,6 @@ If you like the idea click ⭐ on the repo and stay tuned.
 
 ## Available builds
 
-⚠️ The build was broken after around 0.15.0 version. New way to build xonsh found but incomplete. See `draft` directory.
-
 Download xonsh binary from [the release assets](https://github.com/anki-code/xonsh-portable-binary/releases):
 
 * Recommended: **xonsh-glibc-binary** - glibc-build of xonsh 0.17.0 binary with Python 3.11 based on [Nuitka](https://nuitka.net/).
