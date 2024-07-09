@@ -2,7 +2,7 @@ FROM python:3.10-alpine
 VOLUME /result
 
 ENV XONSH_VER=0.17.0
-ENV XONSH_BIN=xonsh-$XONSH_VER-py3.10-glibc.bin
+ENV XONSH_BIN=xonsh-$XONSH_VER-py3.10-musl.bin
 
 RUN apk update && apk add --update musl-dev gcc make cmake python3-dev py3-pip chrpath git vim mc wget openssh-client libuuid build-base patchelf
 RUN pip3 install -U pip prompt_toolkit pygments setproctitle
@@ -48,6 +48,6 @@ RUN find ./xonsh -type f -name "*.py" -print0 | xargs -0 sed -i 's/import sqlite
 ENV LDFLAGS "-static -l:libpython3.10.a"
 RUN nuitka --onefile --standalone --python-flag=no_site --python-flag=no_warnings --follow-imports xonsh/xonsh
 # --show-progress
-RUN ls -la xonsh.dist/*
+RUN ls -la *
 
 CMD cp xonsh.bin /result/$XONSH_BIN
