@@ -14,6 +14,12 @@ Download xonsh binary from [the release assets](https://github.com/anki-code/xon
 * Just for demo: **xonsh-musl-binary** - musl-build of xonsh 0.17.0 binary with Python 3.10 from [python-cmake-buildsystem](https://github.com/python-cmake-buildsystem/python-cmake-buildsystem). SQLite3 is disabled in this build (PR is welcome!).
 * [Find another path](https://gregoryszorc.com/docs/pyoxidizer/main/pyoxidizer_comparisons.html).
 
+## Known issues
+
+### Binary is not working
+
+Do not try to run x86_64 binary files on Mac because it has aarch64 architecture.
+
 ## Drafts
 
 In the `./drafts` directory you can find drafts of Dockerfiles that is not completed.
