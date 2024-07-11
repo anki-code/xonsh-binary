@@ -20,13 +20,13 @@ RUN eval "$(/root/.local/bin/micromamba shell hook -s bash)" \
      && micromamba activate base \
      && micromamba install -c conda-forge libpython-static==$PYTHON_VER gcc ccache \
      && pip install xonsh[full] \
-     && pip uninstall -y xonsh \
+     && xonsh -c '2+2' \
      && pip install git+https://github.com/Nuitka/Nuitka@factory \
      && nuitka --standalone --onefile --static-libpython=yes \
         --onefile-tempdir-spec='%TEMP%/onefile_%PID%_%TIME%' \
         --show-progress --show-scons --show-modules \
         --assume-yes-for-downloads --jobs=2 \
-        xonsh/xonsh
+        /root/micromamba/lib/python3.11/site-packages/xonsh
 
 # --python-flag=nosite,-O,-v
 
