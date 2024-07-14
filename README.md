@@ -29,6 +29,7 @@ In the `./drafts` directory you can find drafts of Dockerfiles that is not compl
 If you're looking how to increase xonsh speed take a look into this:
 * [RustPython](https://github.com/RustPython/RustPython) ([performance](https://user-images.githubusercontent.com/1309177/212613257-5f4bca12-6d6b-4c79-9bac-51a4c6d08928.svg) of [Ruff](https://github.com/charliermarsh/ruff) - Python linter on Rust)
   * [pyoxidizer](https://gregoryszorc.com/docs/pyoxidizer/main/)
+* https://lpython.org/
 * [Python 3.12: A Game-Changer in Performance and Efficiency](https://python.plainenglish.io/python-3-12-a-game-changer-in-performance-and-efficiency-8dfaaa1e744c)
 * [Python 3.11 is up to 10-60% faster than Python 3.10](https://docs.python.org/3.11/whatsnew/3.11.html)
 * [Making Python 5x FASTER with Guido van Rossum](https://www.youtube.com/watch?v=_r6bFhl6wR8).
