@@ -1,7 +1,7 @@
 FROM python:3.10-alpine
 VOLUME /result
 
-ENV XONSH_VER=0.17.0
+ENV XONSH_VER=0.18.1
 ENV XONSH_BIN=xonsh-$XONSH_VER-py3.10-musl.bin
 
 RUN apk update && apk add --update musl-dev gcc make cmake python3-dev py3-pip chrpath git vim mc wget openssh-client libuuid build-base patchelf
