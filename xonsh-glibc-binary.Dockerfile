@@ -1,7 +1,7 @@
 # set `debian:sid` here to get more fresh python (see also https://hub.docker.com/_/debian)
 FROM ubuntu:20.04
 
-ARG PYTHON_VER=3.11.3
+ARG PYTHON_VER=3.11.14
 ARG XONSH_VER=0.21.2
 
 ENV PYTHON_VER=${PYTHON_VER}
