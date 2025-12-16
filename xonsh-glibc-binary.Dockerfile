@@ -31,9 +31,9 @@ RUN eval "$(/root/.local/bin/micromamba shell hook -s bash)" \
             --include-package=pygments \
             --include-package=prompt_toolkit \
             --include-module=pyperclip \
-            --no-deployment-flag=self-execution \
             /root/micromamba/lib/python3.11/site-packages/xonsh
 
+#  --no-deployment-flag=self-execution \
 # --python-flag=nosite,-O,-v
 
 RUN mv xonsh.bin xonsh-$XONSH_VER-py$PYTHON_VER-glibc-$(uname -m).bin
