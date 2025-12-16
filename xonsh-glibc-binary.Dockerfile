@@ -18,7 +18,7 @@ RUN mkdir -p /result
 
 RUN eval "$(/root/.local/bin/micromamba shell hook -s bash)" \
      && micromamba activate base \
-     && micromamba install -c conda-forge libpython-static==$PYTHON_VER gcc ccache \
+     && micromamba install -y -c conda-forge libpython-static==$PYTHON_VER gcc ccache \
      && pip install xonsh[full] \
      && xonsh -c '2+2' \
      && pip install git+https://github.com/Nuitka/Nuitka@factory \
