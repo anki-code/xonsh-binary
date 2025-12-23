@@ -19,6 +19,7 @@ RUN mkdir -p /result
 RUN eval "$(/root/.local/bin/micromamba shell hook -s bash)" \
      && micromamba activate base \
      && micromamba install -y -c conda-forge libpython-static==$PYTHON_VER gcc ccache \
+     && pip install -U pip setuptools wheel certifi \
      && pip install xonsh[full] ujson pygments prompt_toolkit pyperclip \
      && xonsh -c '2+2' \
      && pip install git+https://github.com/Nuitka/Nuitka@factory \
@@ -26,7 +27,7 @@ RUN eval "$(/root/.local/bin/micromamba shell hook -s bash)" \
             --onefile-tempdir-spec='%TEMP%/onefile_%PID%_%TIME%' \
             --show-progress --show-scons --show-modules \
             --assume-yes-for-downloads --jobs=2 \
-            --include-package=pip \
+            --include-package=pip --include-package=setuptools --include-package=wheel --include-package=certifi \
             --include-module=ujson \
             --include-package=pygments \
             --include-package=prompt_toolkit \
