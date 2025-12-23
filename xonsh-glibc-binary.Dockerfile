@@ -27,11 +27,10 @@ RUN eval "$(/root/.local/bin/micromamba shell hook -s bash)" \
             --onefile-tempdir-spec='%TEMP%/onefile_%PID%_%TIME%' \
             --show-progress --show-scons --show-modules \
             --assume-yes-for-downloads --jobs=2 \
-            --include-package=pip --include-package=setuptools --include-package=wheel --include-package=certifi \
+            --include-package=pip --include-package=setuptools --include-package=wheel \
+                --include-package=certifi --include-package-data=certifi \
             --include-module=ujson \
-            --include-package=pygments \
-            --include-package=prompt_toolkit \
-            --include-module=pyperclip \
+            --include-package=pygments --include-package=prompt_toolkit --include-module=pyperclip \
             /root/micromamba/lib/python3.11/site-packages/xonsh
 
 # --python-flag=nosite,-O,-v
