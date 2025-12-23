@@ -22,7 +22,7 @@ RUN eval "$(/root/.local/bin/micromamba shell hook -s bash)" \
      && pip install xonsh[full] ujson pygments prompt_toolkit pyperclip \
      && xonsh -c '2+2' \
      && pip install git+https://github.com/Nuitka/Nuitka@factory \
-     && nuitka --standalone --onefile --static-libpython=yes \
+     && nuitka --standalone --onefile --static-libpython=yes --no-deployment-flag=self-execution \
             --onefile-tempdir-spec='%TEMP%/onefile_%PID%_%TIME%' \
             --show-progress --show-scons --show-modules \
             --assume-yes-for-downloads --jobs=2 \
@@ -33,7 +33,6 @@ RUN eval "$(/root/.local/bin/micromamba shell hook -s bash)" \
             --include-module=pyperclip \
             /root/micromamba/lib/python3.11/site-packages/xonsh
 
-#  --no-deployment-flag=self-execution \
 # --python-flag=nosite,-O,-v
 
 RUN mv xonsh.bin xonsh-$XONSH_VER-py$PYTHON_VER-glibc-$(uname -m).bin
