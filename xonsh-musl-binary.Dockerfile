@@ -4,7 +4,7 @@ VOLUME /result
 ENV XONSH_VER=0.21.2
 ENV XONSH_BIN=xonsh-$XONSH_VER-py3.10-musl.bin
 
-RUN apk update && apk add --update musl-dev gcc make cmake python3-dev py3-pip chrpath git vim mc wget openssh-client libuuid build-base patchelf
+RUN apk update && apk add --update musl-dev gcc make cmake ccache python3-dev py3-pip chrpath git vim mc wget openssh-client libuuid build-base patchelf
 RUN pip3 install -U pip prompt_toolkit pygments setproctitle
 RUN pip3 install -U git+https://github.com/Nuitka/Nuitka@factory
 
