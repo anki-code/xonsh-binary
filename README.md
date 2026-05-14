@@ -6,6 +6,10 @@ This is the proof of concept of building <a href="https://github.com/xonsh/xonsh
 If you like the idea click ⭐ on the repo and stay tuned.
 </p>
 
+## Before reading
+
+This is experimental repository. Most stable results (e.g. Nuitka build) are already in [Xonsh Nightly Build](https://github.com/xonsh/xonsh/releases/tag/nightly-build).
+
 ## Available builds
 
 Download xonsh binary from [the release assets](https://github.com/anki-code/xonsh-portable-binary/releases):
